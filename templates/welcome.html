@@ -1,0 +1,48 @@
+{%extends "layout.html" %}
+
+{% block sub_content %}
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Test</title>	
+  </head>
+  <body>
+
+    <div class="wrapper">
+
+      <header>
+        <h1>ΕΡΓΑΛΕΙΟ ΑΞΙΟΛΟΓΗΣΗΣ ΠΡΟΦΟΡΙΚΟΥ ΛΟΓΟΥ</h1>
+      </header>
+     
+
+<br/>
+      <section class="top-display">
+	<div class="welcome-display">
+       <div>  Πατώντας στο "ΣΥΜΦΩΝΩ" θα ανακατευθυνθείτε στο διαγνωστικό τεστ.</div>
+	</div>
+	<p><div>
+    Αφού Πατήσετε το κουμπί "ΗΧΟΓΡΑΦΗΣΗ" στην οθόνη σας θα εμφανίζονται διάφορες λέξεις, που θα πρέπει να τις πείτε όσο το "ΗΧΟΓΡΑΦΗΣΗ" είναι κόκκινο.
+	</div></p>
+<div>
+Πατώντας "ΣΥΜΦΩΝΩ" δέχεστε ότι οι ηχογραφήσεις σας θα αποθηκευτούν στη βάση δεδομένων μας, με σκοπό τη βελτίωση των ιατρικών μας υπηρεσιών	</div>
+      </section>
+
+    <p> <section class="main-controls">
+        <div id="buttons">
+      
+      
+         <a href="{{ url_for('.start' ) }}" class="continue-link">
+	    <button class="continue">ΣΥΜΦΩΝΩ</button>
+	  </a></p> 
+        </div>
+      </section>
+
+    </div>
+
+  
+   
+
+  </body>
+</html>
+{% endblock %}

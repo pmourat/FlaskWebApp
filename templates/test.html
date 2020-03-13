@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block sub_content %}
+<div class="container text-center">
+<h1>Test Name: {{test['test_name']}} </h1>
+</div>
+
+
+
+{% for wrd in word %}
+{% if test['test_name'] == wrd['test_name'] %}
+<div class="container text-center">
+<h2>{{wrd['word_name']}} </h2>
+</div>
+
+{% endif %}
+
+{% endfor %}
+
+{% endblock %}

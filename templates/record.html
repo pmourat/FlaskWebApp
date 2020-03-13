@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>TEST</title>	
+    <link href="static/styles/app.css" rel="stylesheet" type="text/css">
+  </head>
+  
+  <script type="text/javascript">
+  var p ="{{session['p']}}" ;
+  var w = "{{session['words']}}";
+  var v = w.replace(/&#39;/g, ""); 
+  var v = v.replace(/,/g,"")
+  var v = v.replace('[',"");
+  var v = v.replace(']',"");
+    
+  //var words="{{session['words']}}";
+  </script>
+  <body>
+
+    <div class="wrapper">
+
+      <header>
+        <h1>ΕΡΓΑΛΕΙΟ ΑΞΙΟΛΟΓΗΣΗΣ ΠΡΟΦΟΡΙΚΟΥ ΛΟΓΟΥ</h1>
+      </header>
+
+      <section class="top-display">
+	<div class="directions">
+	  Πατήστε ΗΧΟΓΡΑΦΗΣΗ για να ξεκινήσετε.
+	  <br/>
+	  Πείτε μόνο τη λέξη που βρίσκεται μέσα στο πλαίσιο.
+	  <br/>
+    Πατήστε ΣΤΟΠ για να σταματήσετε την ηχογράφηση.
+    <br/>
+    'Οταν όλες οι ζητούμενες λέξεις ολοκληρωθούν θα είστε διαθέσιμοι να τις αποθηκέυσετε.
+	</div>
+	<div class="progress-display">
+	</div>
+	<div class="info-display">
+	</div>
+      </section>
+
+      <section class="main-controls">
+        <canvas class="visualizer"></canvas>
+        <div id="buttons">
+          <button class="record">ΗΧΟΓΡΑΦΗΣΗ</button>
+          <button class="stop">ΣΤΟΠ</button>
+          <button class="upload">ΑΠΟΘΗΚΕΥΣΗ</button>
+        </div>
+        
+
+
+      </section>
+
+      <section class="sound-clips">
+
+      
+
+      </section>
+
+    </div>
+
+   
+
+    <script src="static/scripts/app.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+{% block sub_content %}
+<div class="container text-center">
+<h1>{{patient['name']}} {{patient['surname']}} </h1>
+</div>
+<div class="container text-center">
+    <b>Username  </b>{{patient['username']}}
+    </div>
+    <div class="container text-center">
+        <b>Age  </b>{{patient['age']}}
+        </div>   
+<hr>
+<div class="container text-center">
+<b>Description: </b> {{patient['description']}}<br>
+</div>
+<div class="container text-center">
+    <p><b>Problem  </b>{{patient['problem']}}</p>
+</div>
+{% if sd>0 %}
+{% if ret[0]['timestamp'] %}
+<div class="container text-center">
+    <a href="/download-zip/{{ patient['patient_id'] }}" class="btn btn-primary">Download Results</a>
+    <h6>Created at {{ret[0]['timestamp']}}</h6>
+        
+    </a>
+ 
+</div>
+<div class="container text-center"><i>Results Preview</i><br></div>
+{% for s in ret %}
+<div class="container text-center">
+    <b>Λέξη  </b>{{s['p1']}} <b>Πρόβλεψη </b>{{s['p2']}}
+  
+</div>
+{% endfor %}
+
+{% endif %}
+{% endif %}  
+
+{% endblock %}
+

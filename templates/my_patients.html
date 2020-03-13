@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block sub_content %}
+  {% if my_patients  %}
+    <table cellpadding="5" >
+    {% for my_patient in my_patients %}
+      <tr>
+        <td style="padding:0 15px;"> <h3> <a href="/patients/{{ my_patient['patient_id'] }}">{{my_patient['name']}} {{my_patient['surname']}} </a> </h3></td>
+        <td style="padding:0 15px;"> <a href="/edit-patient/{{ my_patient['patient_id'] }}" class="btn btn-primary">Edit</a></td>
+        <td style="padding:0 15px;"> <a href="/delete-patient/{{ my_patient['patient_id'] }}" class="btn btn-danger">Delete</a></td>
+      </tr>
+    {% endfor %}
+    </table>
+  {% else %}
+    <h3>No Patients</h3>
+  {% endif %}
+{% endblock %}

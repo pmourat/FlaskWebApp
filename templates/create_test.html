@@ -1,0 +1,36 @@
+{%extends "layout.html" %}
+
+{% block sub_content %}
+<div class="text-center">
+  <h1> Create Test </h1>
+</div>
+<form class="form-horizontal" method="POST">
+
+  <div class="form-group">
+    <label class="control-label col-sm-2">Test Name</label>
+    <div class="col-sm-5">
+      <input type="text" name="test_name"/>
+    </div>
+  </div>
+ 
+
+
+
+{% for i in range(32) %}
+  <div class="form-group">
+    <label class="control-label col-sm-2"> Word{{i+1}} </label>
+    <div class="col-sm-5">
+      <input type="text" name="word{{i}}"/>
+    </div>
+  </div>  
+{%  endfor %}
+
+  
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="Submit" >Submit </button>
+    </div>
+  </div>
+</form>
+{% endblock %}

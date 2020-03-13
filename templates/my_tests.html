@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block sub_content %}
+  {% if my_tests %}
+    <table cellpadding="5" >
+    {% for my_test in my_tests %}
+      <tr>
+        <td style="padding:0 15px;"> <h3> <a href="/tests/{{ my_test['test_id'] }}">{{my_test['test_name']}} </a> </h3></td>
+        <td style="padding:0 15px;"> <a href="/edit-test/{{ my_test['test_id'] }}" class="btn btn-primary">Edit</a></td>
+        <td style="padding:0 15px;"> <a href="/delete-test/{{ my_test['test_id'] }}" class="btn btn-danger">Delete</a></td>
+      </tr>
+    {% endfor %}
+    </table>
+  {% else %}
+    <h3>No tests </h3>
+  {% endif %}
+{% endblock %}

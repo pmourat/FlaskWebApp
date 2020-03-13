@@ -1,0 +1,53 @@
+{%extends "layout.html" %}
+
+{% block sub_content %}
+<div class="text-center">
+  <h1> Edit Test </h1>
+</div>
+<form class="form-horizontal" method="POST">
+
+  <div class="form-group">
+    <label class="control-label col-sm-2">Test Name</label>
+    <div class="col-sm-5">
+      <input type="text" name="test_name" value="{{ test_form['test_name'] }}"/>
+    </div>
+  </div>
+
+
+
+
+  
+
+{% for s in range(32) %}
+  
+  
+  {% if my_words[s] %}
+  <div class="form-group">
+    <label class="control-label col-sm-2"> Word  {{s+1}}</label>
+    <div class="col-sm-5">
+      <input type="text" name="word{{s}}"  value="{{my_words[s]['word_name']}}"/>
+    </div>
+  </div> 
+  {% else %}
+  <div class="form-group">
+    <label class="control-label col-sm-2"> Word  {{s+1}}</label>
+    <div class="col-sm-5">
+      <input type="text" name="word{{s}}"  value=""/>
+    </div>
+  </div> 
+
+ 
+{% endif %}
+{% endfor %} 
+      
+
+    
+
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="Submit" >Submit </button>
+    </div>
+  </div>
+</form>
+{% endblock %}

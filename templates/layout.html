@@ -1,0 +1,17 @@
+{% extends "bootstrap/base.html" %}
+
+
+
+{% block title %}
+Speech Therapy
+{% endblock %}
+
+{% block navbar %}
+  {% include "_navbar2.html" %}
+{% endblock %}
+
+{% block content %}
+  {% include "_messages.html" %}
+  {% block sub_content %}
+  {% endblock %}
+{% endblock %}

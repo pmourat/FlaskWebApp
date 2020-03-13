@@ -1,0 +1,35 @@
+<nav class="navbar navbar-default">
+    <div class="navbar-header">
+        <a class="navbar-brand" href='/'>Speech Therapy </a>
+     
+  </nav>
+  <nav class="navbar navbar-default">
+    
+      <ul class="nav navbar-nav">
+       
+        {% if session.login and session['firstName']=="therapist" %}
+        <li><a href="/create">Create new patient</a></li>
+        <li><a href="/create_test">Create new test</a></li>
+
+        <li><a href="/my-patients">View my patients</a></li>
+        <li><a href="/my-tests">View my tests</a></li>
+        <li><a href="/retr">Retrain model</a></li>
+          
+        </li>
+        
+        {% endif %}
+        <li><a href="/about">About</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        {% if session.login %}
+        <li>
+          <a href="/logout">Logout</a>
+        </li>
+        {% else %}
+        <li>
+          <a href="/login">Login</a>
+        </li>
+        {% endif %}
+      </ul>
+  </nav>
+  

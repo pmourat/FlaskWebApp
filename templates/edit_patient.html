@@ -1,0 +1,91 @@
+{%extends "layout.html" %}
+
+{% block sub_content %}
+<div class="text-center">
+  <h1> Edit Patient </h1>
+</div>
+<form class="form-horizontal" method="POST">
+
+  <div class="form-group">
+    <label class="control-label col-sm-2">First Name</label>
+    <div class="col-sm-5">
+      <input type="text" name="first_name" value="{{ patient_form['name'] }}"/>
+    </div>
+  </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-2">Last Name</label>
+      <div class="col-sm-5">
+        <input type="text" name="last_name" value="{{ patient_form['surname'] }}"/>
+      </div>
+    </div>
+
+
+    <div class="form-group">
+      <label class="control-label col-sm-2">Age </label>
+      <div class="col-sm-5">
+        <input type="text" name="age" value="{{ patient_form['age'] }}"/>
+      </div>
+    </div>
+
+
+
+    <div class="form-group">
+      <label class="control-label col-sm-2">Username</label>
+      <div class="col-sm-5">
+        <input type="text" name="username" value="{{ patient_form['username'] }}"/>
+      </div>
+    </div>
+
+
+
+    <div class="form-group">
+        <label class="control-label col-sm-2">Password</label>
+        <div class="col-sm-5">
+          <input type="password" name="password" value="{{ patient_form['password'] }}"/>
+        </div>
+    </div>
+
+
+    <div class="form-group">
+      <label class="control-label col-sm-2">Email</label>
+      <div class="col-sm-5">
+        <input type="text" name="email" value="{{ patient_form['email'] }}"/>
+      </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-sm-2">Description</label>
+        <textarea class="form-control rounded-0" style="max-width: 20%;" name="description" rows="5"> {{ patient_form['description'] }}</textarea>
+      </div>
+
+    {% for my_tst in my_test %}  
+    <table cellpadding="5" >
+    {% if (patient_form["problem"] == my_tst['test_name']) %}
+    <div class="form-group">
+      <div class="control-label col-sm-2"><b>Problem</b></div>
+        <label class="radio-inline">
+          <input type="radio" name="optradio" id="{{my_tst['test_name']}}" value="{{my_tst['test_name']}}" checked>{{my_tst['test_name']}}</input></label>
+        </div>
+          {% else %}
+    <div class="form-group">
+    <div class="control-label col-sm-2"><b>Problem</b></div>
+      <label class="radio-inline">
+        <input type="radio" name="optradio" id="{{my_tst['test_name']}}" value="{{my_tst['test_name']}}">{{my_tst['test_name']}}</input></label>
+      </div> 
+    {% endif %}   
+    {% endfor %}  
+     
+      
+
+   
+    
+
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="Submit" >Submit </button>
+    </div>
+  </div>
+</form>
+{% endblock %}
